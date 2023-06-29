@@ -17,15 +17,10 @@ function Board({squares,flag,onPlay}){
   let status;
   if(winner) status='Winner: '+winner;
   else status='Next Player: ' + (flag?'X':'O');
-  const temp = squares.map((square,i)=>{
-    return(
-      <Square value={squares[i]}  onSquareClick={ () =>handleClick(i)} />
-    )
-  })
+  
 return(
     <>
     <div className="status">{status}</div>
-    <div>{temp}</div>
     <div className="board-row">
       <Square value={squares[0]}  onSquareClick={ () =>handleClick(0)} />
       <Square value={squares[1]}  onSquareClick={() => handleClick(1)} />
